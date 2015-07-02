@@ -1,0 +1,28 @@
+ntrajectories = 1000
+
+#jumps parameter (superdiffusion)
+alpha = 2.0
+
+# waiting times parameter ( subdiffusion )
+beta = 1.0
+
+
+# start time
+starttime=0.0
+
+# end time
+maxT = 5.0
+
+
+# time step
+dt = 0.001
+
+
+# x0
+X0 = 0.0
+Y0 = 0.0
+
+#noise intensity
+NOISE_D = 1.0
+
+
