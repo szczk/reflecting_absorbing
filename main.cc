@@ -29,7 +29,7 @@ int main ( int argc, char **argv )
      double ntrajectories = settings.getNtrajectories();
      int tenPerc = ( ntrajectories>10 ) ? ( int ) ( ntrajectories*0.1 ) : 1;
 
-     Simulation * sim = new Simulation ( &settings );
+     Simulation * sim = new Simulation( &settings );
 
 
      //generate trajectories
@@ -37,20 +37,10 @@ int main ( int argc, char **argv )
 
           if ( nt%tenPerc==0 ) {
                cout << nt<<"/"<<ntrajectories<<endl;
-          }
+          }  
 
-          string outputFile = settings.getDatafileName ( settings.getStoragePath(), nt );
+          sim->run();
 
-          cout << "saving in  " << outputFile << endl;
-
-          Datafile * datafile = Datafile::create ( outputFile.c_str() );
-
-
-          sim->run ( datafile );
-
-
-          datafile->close();
-          delete datafile;
      }
 
 

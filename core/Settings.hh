@@ -162,6 +162,10 @@ public:
           return this->parameters["beta"];
      }
 
+     
+     paramsType getAlpha() { return this->getJumpsParameter(); }
+     paramsType getBeta() { return this->getWaitingTimesParameter();}
+     
      void setJumpsParameter ( paramsType alpha ) {
           this->parameters["alpha"] = alpha;
      }

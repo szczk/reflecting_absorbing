@@ -3,10 +3,13 @@
 
 #include "../core/Settings.hh"
 #include "../core/Randoms.hh"
-#include "../tools/Datafile.hh"
 
-#include "QuadraticPotential.hh"
-#include "SquarePotential.hh"
+#include "Particle.hh"
+#include "Border.hh"
+// #include "../tools/Datafile.hh"
+
+// #include "QuadraticPotential.hh"
+// #include "SquarePotential.hh"
 
 
 using namespace std;
@@ -18,11 +21,13 @@ class Simulation {
 private:
      Settings * settings;
      Randoms * rand;
-     Potential * potential;
-
+     
      void init();
      void cleanUp();
 
+     Border * leftBorder;
+     Border * rightBorder;
+     
 
      void reset();
 
@@ -34,7 +39,7 @@ public:
 
 
 
-     void run ( Datafile* datafile );
+     void run ();
 
 
 };

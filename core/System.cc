@@ -82,7 +82,7 @@ void System:: readMemoryUsage()
 void System:: printInfo()
 {
     cout << endl;
-    cout << " Stochastics v0.2" << endl;
+    cout << " Stochastics v0.4" << endl;
     cout << " Compilation date: " << this->getCompilationDate() << endl;
     cout << " Available cores: " << this->getNumberOfCPUs() << endl;
 //     cout << "System memory: " << sys.getSystemMemory() <<endl;
