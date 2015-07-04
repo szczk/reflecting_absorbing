@@ -4,6 +4,8 @@
 // #include "../core/Randoms.hh"
 // #include "../core/Settings.hh"
 // #include "../main.hh"
+#include "Particle.hh"
+#include <iostream>
 
 using namespace std;
 
@@ -14,7 +16,7 @@ using namespace std;
  */
 class Border {
 
-private:
+protected:
      double positionX;
      void init();
 
@@ -27,9 +29,11 @@ public:
 
      virtual const char * toString();
 
-     virtual void operator()() = 0 ;
+     virtual void operator()(Particle *) = 0;
+     double getPosition() { return positionX; }
 
 
+     void interact(Particle *p);
 //      virtual vec getExact ( const vec X, double dt ) = 0;
 
 };

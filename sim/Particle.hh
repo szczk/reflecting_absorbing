@@ -1,6 +1,7 @@
 #ifndef __PARTICLE_HH__
 #define __PARTICLE_HH__
 
+#include <iostream>
 
 /**
  * single random-walking particle
@@ -19,6 +20,8 @@ public:
       ~Particle();
       
       
+      double getPosition() { return positionX; }
+      void setPosition(double x) { this->positionX = x; }
       
       void advance(double dx);
       
