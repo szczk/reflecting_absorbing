@@ -47,7 +47,7 @@ void Simulation::cleanUp()
 void Simulation::reset()
 {
 
-     this->rand->reset();
+//      this->rand->reset();
 
 
 }
@@ -76,12 +76,19 @@ void Simulation::run ( AnimatedPDFCreator * anim )
 
      double dx  = 0.0;
 // cout << " ---------------------"<< endl;
+     
+     anim->newSim();
+     
+//      ofstream file("test.txt");
+     
      while ( ( !walker->absorbed() ) && ( t <= endTime ) ) {
 
           dx  =  dL * this->rand->getLevyStable ( alpha,beta,  sigma,  0.0 );
 
-// 	  cout << " move  from " << walker->getPosition() << " + " << dx << endl;
+// 	  cout << " move  from " << walker->getPosition() << " + " << dx << "\t\tdl=" << dL << endl;
 	  walker->advance ( dx );
+	  
+	  
 	  
 	  
           if ( walker->getPosition() >= rightBorder->getPosition() ) {
@@ -103,13 +110,19 @@ void Simulation::run ( AnimatedPDFCreator * anim )
 //                } else {
 //                     walker->advance ( dx );
 //                }
-          }
+          } else {
+	    
+	  }
+// file << t << "\t" << walker->getPosition() <<"\n";
 
-
+	  if ( !walker->absorbed() ) {
           anim->add(t, walker->getPosition() );
-
+	  }
+	  
           t+=dt;
      }
+     
+//      file.close();
      
      
 //      if ( !walker->absorbed() ) {

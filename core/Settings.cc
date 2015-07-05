@@ -276,9 +276,7 @@ string Settings::getFullOutputFilesPrefix()
      double alpha = getJumpsParameter();
      double beta = getWaitingTimesParameter();
      double noise = getNoiseIntensity();
-     int noiseType = ( int ) get ( "NOISE_TYPE" );
-     int potentialType = ( int ) get ( "POTENTIAL_TYPE" );
 
-     sprintf ( fullPrefix,"%s_a%1.2f_b%1.2f_s%1.2f_nt%i_pt%i", getFilesPrefix(),alpha ,beta , noise , noiseType, potentialType );
+     sprintf ( fullPrefix,"%s_a%1.2f_b%1.2f_s%1.2f", getFilesPrefix(),alpha ,beta , noise  );
      return string ( fullPrefix );
 }

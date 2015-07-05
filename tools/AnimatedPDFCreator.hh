@@ -18,6 +18,9 @@ private:
   double tMin;
   double tMax;
   
+  int steps = 0;
+  int saveEverySteps;
+  
   map<double , gsl_histogram *> * histograms;
   
   void init();
@@ -26,7 +29,7 @@ private:
   
   gsl_histogram * getHistogram(double time);
   
-  void saveHistogram(gsl_histogram * histogram, double time );
+  void saveHistogram(gsl_histogram * histogram, double time, int count);
   
 public:
   
@@ -40,6 +43,7 @@ public:
    */
   void add(double time, double position);
   
+  void newSim();
   
   void save();
   

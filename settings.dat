@@ -1,7 +1,7 @@
 ntrajectories = 100
 
 #jumps parameter (superdiffusion)
-alpha = 1.9
+alpha = 0.8
 
 # waiting times parameter ( subdiffusion )
 beta = 0.0
@@ -11,7 +11,7 @@ beta = 0.0
 starttime=0.0
 
 # end time
-maxT = 5.0
+maxT = 10.0
 
 
 # time step
@@ -23,6 +23,16 @@ X0 = 0.0
 Y0 = 0.0
 
 #noise intensity
-NOISE_D = 4
+NOISE_D = 0.5
 
 
+
+# border at -L and +L
+BORDER_L = 1
+
+
+#histogram settings
+NBINS =  200
+
+#histogram every
+HISTO_EVERY = 0.01
