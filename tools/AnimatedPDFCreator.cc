@@ -114,7 +114,7 @@ void AnimatedPDFCreator::saveHistogram ( gsl_histogram* histogram, double time, 
      plotScript << "'\n";
 
 
-     plotScript << "set terminal pngcairo enhanced size 1200,700;\n";
+     plotScript << "set terminal pngcairo enhanced size 320,240;\n";
      plotScript << "set output \""<< settings->getFullOutputFilesPrefix() << "_distribution_t_"<< count <<".png\"\n";
 
 //      plotScript << "set terminal post eps size 12,7 enhanced color font 'Helvetica,35' linewidth 2;\n";

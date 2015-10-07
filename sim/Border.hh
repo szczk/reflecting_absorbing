@@ -29,11 +29,11 @@ public:
 
      virtual const char * toString();
 
-     virtual void operator()(Particle *) = 0;
+     virtual bool operator()(Particle *) = 0;
      double getPosition() { return positionX; }
 
 
-     void interact(Particle *p);
+     bool interact(Particle *p);
 //      virtual vec getExact ( const vec X, double dt ) = 0;
 
 };

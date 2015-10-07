@@ -16,7 +16,7 @@ public:
      AbsorbingBorder ( double position );
      virtual ~AbsorbingBorder();
      virtual const char * toString();
-     virtual void operator() ( Particle * );
+     virtual bool operator() ( Particle * );
 
 };
 

@@ -16,7 +16,7 @@ public:
      ReflectingBorder ( double position );
      virtual ~ReflectingBorder();
      virtual const char * toString();
-     virtual void operator() ( Particle * );
+     virtual bool operator() ( Particle * );
 
 };
 

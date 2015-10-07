@@ -12,7 +12,7 @@ ReflectingBorder::~ReflectingBorder()
 
 }
 
-void ReflectingBorder::operator() ( Particle * p )
+bool ReflectingBorder::operator() ( Particle * p )
 {
 
      if (  ( this->getPosition() > 0.0 ) ) {
@@ -33,6 +33,7 @@ void ReflectingBorder::operator() ( Particle * p )
           cerr << "unexpected situation at reflecting border! " << "border position: " << getPosition() <<", particle position: " << p->getPosition() << endl;
           throw -1;
      }
+     return false;
 }
 
 

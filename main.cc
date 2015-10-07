@@ -32,8 +32,8 @@ int main ( int argc, char **argv )
 
      double L = settings.get("BORDER_L");
 
-          sim->setLeftBorder( new AbsorbingBorder( -L ) );
-//      sim->setLeftBorder ( new ReflectingBorder ( -L ) );
+//           sim->setLeftBorder( new AbsorbingBorder( -L ) );
+     sim->setLeftBorder ( new ReflectingBorder ( -L ) );
      sim->setRightBorder ( new ReflectingBorder ( L ) );
 
 

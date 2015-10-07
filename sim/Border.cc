@@ -32,15 +32,15 @@ void Border::destroy()
 
 
 
-void Border::operator() (Particle *p)
+bool Border::operator() (Particle *p)
 {
     cerr << "base class!";
     throw -1;
 }
 
-void Border::interact(Particle *p ) 
+bool Border::interact(Particle *p ) 
 {
-    this->operator()(p);
+    return this->operator()(p);
 }
 
 const char* Border::toString()

@@ -17,7 +17,7 @@ const char* AbsorbingBorder::toString()
 }
 
 
-void AbsorbingBorder::operator() ( Particle * p )
+bool AbsorbingBorder::operator() ( Particle * p )
 {
   p->absorb();
   /*
@@ -40,4 +40,5 @@ void AbsorbingBorder::operator() ( Particle * p )
      }
      
      */
+  return true;
 }

@@ -80,7 +80,7 @@ void Simulation::run ( AnimatedPDFCreator * anim )
      anim->newSim();
      
 //      ofstream file("test.txt");
-     
+     bool stepMade = true;
      while ( ( !walker->absorbed() ) && ( t <= endTime ) ) {
 
           dx  =  dL * this->rand->getLevyStable ( alpha,beta,  sigma,  0.0 );
@@ -88,7 +88,7 @@ void Simulation::run ( AnimatedPDFCreator * anim )
 // 	  cout << " move  from " << walker->getPosition() << " + " << dx << "\t\tdl=" << dL << endl;
 	  walker->advance ( dx );
 	  
-	  
+	  stepMade = true;
 	  
 	  
           if ( walker->getPosition() >= rightBorder->getPosition() ) {
@@ -96,7 +96,7 @@ void Simulation::run ( AnimatedPDFCreator * anim )
 // 		cout << " move right from " << walker->getPosition() << " + " << dx << endl;
 
 //                if ( ( walker->getPosition() + dx )  >= rightBorder->getPosition() ) {
-                    rightBorder->interact ( walker );
+                   stepMade =  rightBorder->interact ( walker );
 //                } else {
 //                     walker->advance ( dx );
 //                }
@@ -106,7 +106,7 @@ void Simulation::run ( AnimatedPDFCreator * anim )
 // 	       cout << " move left from " << walker->getPosition() << " + " << dx << endl;
 
 //                if ( ( walker->getPosition() + dx ) <= leftBorder->getPosition() ) {
-                    leftBorder->interact ( walker );
+                   stepMade =  leftBorder->interact ( walker );
 //                } else {
 //                     walker->advance ( dx );
 //                }
@@ -118,7 +118,8 @@ void Simulation::run ( AnimatedPDFCreator * anim )
 	  if ( !walker->absorbed() ) {
           anim->add(t, walker->getPosition() );
 	  }
-	  
+	 
+	 if(stepMade)
           t+=dt;
      }
      
